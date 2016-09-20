@@ -63,11 +63,14 @@ RUN mkdir -p /home/docker/code/   \
    &&  echo "code, data, rcs-repo, media, benchmark-dump, heartbeats, backups and softwares driectories are created"  | sed -e "s/^/$(date +%Y%m%d-%H%M%S) :  /" 2>&1 | tee -a ${LOG_INSTALL_DOCKER}
 
 
-# install our code
-ADD . /home/docker/code/ 
-
 # change the working directory to "/home/docker/code"
 WORKDIR "/home/docker/code/" 
+
+# install gstudio docker code
+RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/alpeshgajbe/gstudio-docker.git  
+
+# install gstudio app code
+git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/gnowledge/gstudio.git 
 
 #bower install
 RUN cd /home/docker/code/gstudio/gnowsys-ndf/   \
