@@ -68,6 +68,7 @@ WORKDIR "/home/docker/code/"
 
 # install gstudio docker code
 RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/alpeshgajbe/gstudio-docker.git  
+RUN mv gstudio-docker/* . && rm -rf gstudio-docker
 
 # install gstudio app code
 RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/gnowledge/gstudio.git 
