@@ -144,7 +144,7 @@ RUN apt-get update \
 #        && chmod +x /usr/local/bin/gosu  | sed -e "s/^/$(date +%Y%m%d-%H%M%S) :  /" 2>&1 | tee -a ${LOG_INSTALL_DOCKER}
 
 # gpg: key 7F0CEB10: public key "Richard Kreuter <richard@10gen.com>" imported
-#RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 492EAFE8CD016A07919F1D2B9ECBEC467F0CEB10  | sed -e "s/^/$(date +%Y%m%d-%H%M%S) :  /" 2>&1 | tee -a ${LOG_INSTALL_DOCKER}
+RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 492EAFE8CD016A07919F1D2B9ECBEC467F0CEB10  | sed -e "s/^/$(date +%Y%m%d-%H%M%S) :  /" 2>&1 | tee -a ${LOG_INSTALL_DOCKER}
 
 # Mrunal : 12012016 : Changed the source for mongodb from "http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.1 multiverse" to "http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/stable multiverse" 
 RUN echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/stable multiverse" > /etc/apt/sources.list.d/mongodb-org.list  | sed -e "s/^/$(date +%Y%m%d-%H%M%S) :  /" 2>&1 | tee -a ${LOG_INSTALL_DOCKER}
