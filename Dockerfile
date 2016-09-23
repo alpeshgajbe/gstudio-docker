@@ -73,7 +73,7 @@ RUN mv gstudio-docker/* . && rm -rf gstudio-docker
 # install gstudio app code
 RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/gnowledge/gstudio.git 
 
-RUN wget http://103.36.84.69:9000/static.tgz
+RUN wget http://103.36.84.69:9001/static.tgz
 RUN tar -xvzf static.tgz  && rm -rf static.tgz
 
 #bower install
