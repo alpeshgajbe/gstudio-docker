@@ -71,7 +71,8 @@ RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/alpesh
 RUN mv gstudio-docker/* . && rm -rf gstudio-docker
 
 # install gstudio app code
-RUN git clone https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/gnowledge/gstudio.git 
+RUN git clone -b master https://743e4ddc106b7b2cf402bbf802cae683b0aa62de@github.com/gnowledge/gstudio.git 
+RUN cd gstudio && git reset --hard $commitid && cd ..
 
 RUN wget http://103.36.84.69:9001/static.tgz
 RUN tar -xvzf static.tgz  && rm -rf static.tgz
